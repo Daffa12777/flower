@@ -59,6 +59,9 @@ html, body, [class*="css"], .stApp, [data-testid="stAppViewContainer"]{
 .stApp{ background:var(--gray); }
 .block-container{ max-width:1200px; padding-top:2.2rem; padding-bottom:3rem; }
 #MainMenu, footer{ visibility:hidden; }
+/* Header dibuat transparan (hilangkan bar hitam) tapi tombol sidebar tetap tampil */
+[data-testid="stHeader"], header{ background:transparent !important; box-shadow:none !important; }
+[data-testid="stToolbar"], [data-testid="stDecoration"]{ display:none !important; }
 /* Tombol buka sidebar dibuat jelas (maroon) */
 [data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"]{
   visibility:visible !important; display:flex !important; top:14px !important; left:14px !important;
