@@ -59,22 +59,31 @@ html, body, [class*="css"], .stApp, [data-testid="stAppViewContainer"]{
 .stApp{ background:var(--gray); }
 .block-container{ max-width:1200px; padding-top:2.2rem; padding-bottom:3rem; }
 #MainMenu, footer{ visibility:hidden; }
-/* Header dibuat transparan (hilangkan bar hitam) tapi tombol sidebar tetap tampil */
+/* Header transparan (hilangkan bar hitam) */
 [data-testid="stHeader"], header{ background:transparent !important; box-shadow:none !important; }
 [data-testid="stToolbar"], [data-testid="stDecoration"]{ display:none !important; }
-/* Tombol buka sidebar dibuat jelas (maroon) */
-[data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"]{
-  visibility:visible !important; display:flex !important; top:14px !important; left:14px !important;
+
+/* HAMBURGER (☰) buka sidebar — dipaksa selalu terlihat jelas, termasuk mobile */
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="collapsedControl"],
+[data-testid="stExpandSidebarButton"]{
+  visibility:visible !important; opacity:1 !important; display:flex !important;
+  position:fixed !important; top:12px !important; left:12px !important; z-index:999999 !important;
 }
-[data-testid="stSidebarCollapsedControl"] button, [data-testid="collapsedControl"] button{
-  background:var(--maroon) !important; border-radius:12px !important; padding:8px !important;
-  box-shadow:0 4px 14px rgba(122,31,43,.30) !important; border:none !important;
+[data-testid="stSidebarCollapsedControl"] button,
+[data-testid="collapsedControl"] button,
+[data-testid="stExpandSidebarButton"] button{
+  background:var(--maroon) !important; border:none !important; border-radius:12px !important;
+  width:46px !important; height:46px !important; padding:0 !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  box-shadow:0 6px 18px rgba(122,31,43,.35) !important;
 }
-[data-testid="stSidebarCollapsedControl"] button:hover, [data-testid="collapsedControl"] button:hover{
-  background:var(--maroon-hover) !important;
-}
-[data-testid="stSidebarCollapsedControl"] svg, [data-testid="collapsedControl"] svg{
-  color:#fff !important; fill:#fff !important; width:22px !important; height:22px !important;
+[data-testid="stSidebarCollapsedControl"] button:hover,
+[data-testid="collapsedControl"] button:hover{ background:var(--maroon-hover) !important; }
+[data-testid="stSidebarCollapsedControl"] svg,
+[data-testid="collapsedControl"] svg,
+[data-testid="stExpandSidebarButton"] svg{
+  color:#fff !important; fill:#fff !important; width:26px !important; height:26px !important;
 }
 
 /* Sidebar putih + teks jelas */
